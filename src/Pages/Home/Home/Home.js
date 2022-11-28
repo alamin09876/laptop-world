@@ -12,14 +12,10 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <h2>Home</h2>
-            <div>
+            <div className='grid lg:grid-cols-3 gap-4 lg:m-6'>
                 {
-                    category.map(cat =><Link to={`/categories/${cat._id}`} className='btn btn-primary m-6'>{cat.category}</Link>)
+                    category.map(cat => <Link className='card-body text-white text-center  bg-slate-600 ' to={`/categories/${cat._id}`} >{cat.category}</Link>)
                 }
-
-
-                {/* <MyProductId>fguiui</MyProductId> */}
             </div>
             <Advertice></Advertice>
 

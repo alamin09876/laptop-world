@@ -13,20 +13,20 @@ const Advertice = () => {
     }, [])
     console.log(advertice);
     return (
-        <div>
+        <div className='grid lg:grid-cols-3'>
             {
                 advertice.map(adv => <div
                 key={adv._id} adv={adv}
-                ><div className="card w-96 bg-base-100 shadow-xl">
-                    <figure><img src={adv.picture} alt="Shoes" /></figure>
+                ><div className="card card-compact w-96 h-96 my-10 bg-base-100 shadow-xl mx-auto">
+                    <figure><img src={adv.picture} alt="Shoes"/></figure>
                     <div className="card-body">
                         <h2 className="card-title">{adv.name}</h2>
                         <p>Price: ${adv.price}</p>
                         <p>Condition: {adv.conditionType}</p>
                         <p>Purchase Year: {adv.yearOfPurchase}</p>
                         <p>Product Description: {adv.discription}</p>
-                        <div className="card-actions justify-end">
-                        <Link to={`/product/${adv._id}`}><button className="btn btn-primary">Buy Now</button></Link>
+                        <div className="card-actions w-full mx-auto">
+                        <Link to={`/product/${adv._id}`}><button className="btn btn-primary  ">Buy Now</button></Link>
                         </div>
                     </div>
                 </div></div>)

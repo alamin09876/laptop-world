@@ -9,36 +9,33 @@ const MyOrders = () => {
     const filtered = myorders.filter(obj => {
         return obj.email === user?.email;
     });
-    
+
     return (
         <div>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-1/2 mx-auto">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                </table>
+            </div>
             {
                 user?.uid ?
                     <>
                         {
                             filtered.map((order, index) => <div
-                            key={order._id} 
-                            order={order}
+                                key={order._id}
+                                order={order}
                             >
-
-
                                 <div className="overflow-x-auto w-full">
-                                    <table className="table w-full">
-
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <label>
-
-                                                    </label>
-                                                </th>
-                                                <th>Picture</th>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Action</th>
-
-                                            </tr>
-                                        </thead>
+                                    <table className="table w-1/2 mx-auto">
                                         <tbody>
 
                                             <tr>
@@ -62,9 +59,7 @@ const MyOrders = () => {
                                                 </td>
                                                 <td>
                                                     {order.price}
-
                                                 </td>
-
                                                 <th>
                                                     <button className="btn btn-ghost btn-xs">pay</button>
                                                 </th>

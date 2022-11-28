@@ -16,10 +16,10 @@ const Categories = ({cat}) => {
 
     console.log(product);
     return (
-        <div>
+        <div className='grid lg:grid-cols-3'>
             {
                 product.map(filter => <div key={filter._id} filter={filter}>
-                    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                    <div className="card card-compact w-96 h-96 my-10 bg-base-100 shadow-xl mx-auto">
                         <figure><img src={filter.picture} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{filter.name}</h2>

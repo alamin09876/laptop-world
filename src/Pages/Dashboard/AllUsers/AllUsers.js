@@ -3,7 +3,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const AllUsers = () => {
     const [users, setUsers] = useState([]);
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     useEffect(() => {
         fetch('http://localhost:5000/users')
             .then(res => res.json())
@@ -12,29 +12,32 @@ const AllUsers = () => {
     console.log(users);
     return (
         <div>
-           {
-                users.map((usr,i) => <div key={usr._id} usr={usr}>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra lg:w-1/2 mx-auto">
+                    <thead>
+                        <tr>
+                            <th className='mr-6 text-center'>No</th>
+                            <th className='mr-6 text-center'>Name</th>
+                            <th className='mr-8 text-center'>Email</th>
+                            <th className='mr-8 text-center'>User Type</th>
+                            <th className='mr-6 text-center'>Make Admin</th>
+                            <th className='mr-6 text-center'>Delete</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {
+                users.map((usr, i) => <div key={usr._id} usr={usr}>
                     <div className="overflow-x-auto">
-                        <table className="table table-zebra w-full">
-                           
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>User Type</th>
-                                    <th>Make Admin</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>{i+1}</th>
-                                    <td>{usr.name}</td>
+                        <table className="table lg:w-1/2 mx-auto">
+                            <tbody className=''>
+                                <tr className='lg:mr-6 text-center'>
+                                    <th >{i + 1}</th>
+                                    <td >{usr.name}</td>
                                     <td>{usr.email}</td>
-                                    <td>{usr.displayUser}</td>
-                                    <td><button className='btn btn-xs bg-red-600'>Make Admin</button></td>
-                                    <td><button className='btn btn-xs'>X</button></td>
+                                    <td >{usr.displayUser}</td>
+                                    <td ><button className='btn btn-xs bg-red-600'>Make Admin</button></td>
+                                    <td ><button className='btn btn-xs'>X</button></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -6,13 +6,15 @@ import Category from '../Category/Category';
 const SellerDashboard = () => {
     
     return (
-        <>
-            <Link to='/addproducts'>Add products</Link><br></br>
-            <Link to='/myproducts'>My products</Link>
-            <label htmlFor="my-modal-6" className="btn">Category</label>
+        <div className='text-center my-6'>
+            <Link className='mb-6' to='/addproducts'>Add products</Link><br></br>
+            <Link className='mb-6' to='/myproducts'>My products</Link>
+            <br></br>
+            <label className='my-6 btn' htmlFor="my-modal-6">Category</label>
+            
             <Category></Category>
 
-        </>
+        </div>
 
 
     );
