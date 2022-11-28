@@ -10,9 +10,9 @@ const SellerDashboard = () => {
             <Link className='mb-6' to='/addproducts'>Add products</Link><br></br>
             <Link className='mb-6' to='/myproducts'>My products</Link>
             <br></br>
+            <Category></Category>
             <label className='my-6 btn' htmlFor="my-modal-6">Category</label>
             
-            <Category></Category>
 
         </div>
 

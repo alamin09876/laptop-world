@@ -19,7 +19,7 @@ const Category = () => {
     }
     return (
         <div>
-            <h2 className='text-center text-6xl'>Category</h2>
+            
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
