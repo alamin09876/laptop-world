@@ -5,7 +5,7 @@ const AllUsers = () => {
     const [users, setUsers] = useState([]);
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://laptop-world-server-five.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

@@ -7,7 +7,7 @@ const AddProducts = () => {
     const { user } = useContext(AuthContext);
     const [category, setCategory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://laptop-world-server-five.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])
@@ -45,7 +45,7 @@ const AddProducts = () => {
             postDate, categoryId, sellerMail, sellerName
         }
         // console.log(services)
-        fetch('http://localhost:5000/products', {
+        fetch('https://laptop-world-server-five.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

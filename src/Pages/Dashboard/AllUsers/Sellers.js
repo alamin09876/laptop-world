@@ -5,7 +5,7 @@ const Sellers = () => {
     const [users, setUsers] = useState([]);
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch('http://localhost:5000/sellers')
+        fetch('https://laptop-world-server-five.vercel.app/sellers')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [users])
@@ -14,7 +14,7 @@ const Sellers = () => {
         const agree = window.confirm(`Are you sure you want to delete :`)
         if (agree) {
             console.log("Deleting user with id:", userDelete._id)
-            fetch(`http://localhost:5000/userDelete/${userDelete._id}`, {
+            fetch(`https://laptop-world-server-five.vercel.app/userDelete/${userDelete._id}`, {
                 method: 'DELETE',
                 headers : {
                     'content-type' : 'application/json'

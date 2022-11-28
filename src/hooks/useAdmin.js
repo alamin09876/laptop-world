@@ -5,7 +5,7 @@ const useAdmin = email =>{
     const [notAdmin, setNotAdmin] = useState(false);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/userVerify/${email}`)
+        fetch(`https://laptop-world-server-five.vercel.app/userVerify/${email}`)
         .then(res=>res.json())
         .then(data=>{
             setIsAdmin(data.displayUser)

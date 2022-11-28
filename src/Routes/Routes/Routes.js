@@ -59,37 +59,37 @@ const router = createBrowserRouter([
             {
                 path:'/myproducts',
                 element :<MyProducts></MyProducts>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://laptop-world-server-five.vercel.app/products')
                 
             },
             
             {
                 path:'/myorders',
                 element : <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/bookings')
+                loader: () => fetch('https://laptop-world-server-five.vercel.app/bookings')
                 
             },
             {
                 path:'/product/:id',
                 element : <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({params}) => fetch(`https://laptop-world-server-five.vercel.app/products/${params.id}`)
                 
             },
             {
                 path:'/advertice/:id',
                 element : <MyProducts></MyProducts>,
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({params}) => fetch(`https://laptop-world-server-five.vercel.app/products/${params.id}`)
                 
             },
             {
                 path : '/update/:id',
                 element :<PrivateRoute><Update></Update></PrivateRoute>,
-                loader : ({params}) => fetch (`http://localhost:5000/products/${params.id}`)
+                loader : ({params}) => fetch (`https://laptop-world-server-five.vercel.app/products/${params.id}`)
             },
             {
                 path : '/categories/:id',
                 element : <Categories></Categories>,
-                loader : ({params}) => fetch (`http://localhost:5000/categories/${params.id}`)
+                loader : ({params}) => fetch (`https://laptop-world-server-five.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/allusers',

@@ -65,7 +65,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, displayUser) => {
         const user = { name, email, displayUser };
-        fetch('http://localhost:5000/users', {
+        fetch('https://laptop-world-server-five.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

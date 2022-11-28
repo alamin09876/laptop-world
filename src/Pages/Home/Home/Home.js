@@ -8,7 +8,7 @@ const Home = () => {
     const [category, setCategory] = useState([])
     const nav = useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://laptop-world-server-five.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategory(data))
     }, [])

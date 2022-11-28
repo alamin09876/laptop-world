@@ -6,7 +6,7 @@ import Spinner from '../../Spinner/Spinner';
 const Advertice = () => {
     const [advertice, setAdvertice] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/advertice')
+        fetch('https://laptop-world-server-five.vercel.app/advertice')
             .then(res => res.json())
             .then(data => {
                 

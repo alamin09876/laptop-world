@@ -30,7 +30,7 @@ const BookingModal = ({ productDetails }) => {
             userName
         }
         console.log(bookings)
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://laptop-world-server-five.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

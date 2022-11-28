@@ -5,7 +5,7 @@ const Category = () => {
     const handleCategory = (event) =>{
         event.preventDefault()
         const category = event.target.category.value.trim();
-        fetch('http://localhost:5000/categories',{
+        fetch('https://laptop-world-server-five.vercel.app/categories',{
             method: 'POST',
             headers: {
                 'content-type': "application/json"

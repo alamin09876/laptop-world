@@ -8,14 +8,12 @@ const MyProducts = () => {
     const products = useLoaderData();
     const [product,  setProduct] = products
     const { user } = useContext(AuthContext)
-    useEffect(() =>{
-        
-    },[product])
+    
     const handleDelete = product => {
         const agree = window.confirm(`Are you sure you want to delete :`)
         if (agree) {
             console.log("Deleting user with id:", product._id)
-            fetch(`http://localhost:5000/deleteProduct/${product._id}`, {
+            fetch(`https://laptop-world-server-five.vercel.app/deleteProduct/${product._id}`, {
                 method: 'DELETE',
                 headers : {
                     'content-type' : 'application/json'
@@ -34,7 +32,7 @@ const MyProducts = () => {
     }
     const handleAdvertice = product => {
         console.log(product)
-        fetch(`http://localhost:5000/products/${product._id}?advertice=true`, {
+        fetch(`https://laptop-world-server-five.vercel.app/products/${product._id}?advertice=true`, {
             method: "PATCH",
 
         })
