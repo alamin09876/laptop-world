@@ -13,8 +13,7 @@ const Login = () => {
     const [loginUserEmail, setLoginUserEmail] = useState('')
     const googleProvider = new GoogleAuthProvider();
 
-    const location = useLocation();
-    const navigate = useNavigate();
+    
 
 
     const from = location.state?.from?.pathname || '/';
@@ -34,8 +33,24 @@ const Login = () => {
                 console.error(error)
             })
     }
-   
+    const handleLogin = data => {
+        console.log(data);
+        setLoginError('');
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('Login Successfully')
+                setLoginUserEmail(data.email)
+                navigate(from, { replace: true })
 
+            })
+            .catch(error => {
+                console.log(error.message)
+                setLoginError(error.message);
+            });
+    }
+    
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
