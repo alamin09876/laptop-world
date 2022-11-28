@@ -13,6 +13,7 @@ import Home from "../../Pages/Home/Home/Home";
 import ProductDetails from "../../Pages/Home/ProductDetails/ProductDetails";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/Login/Registration/Registration";
+import NotFound from "../../Pages/NotFound/NotFound";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -94,9 +95,12 @@ const router = createBrowserRouter([
             {
                 path: '/allusers',
                 element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+            },
+
+            {
+                path: '*',
+                element: <NotFound></NotFound>
             }
-
-
 
         ]
     }
