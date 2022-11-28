@@ -34,9 +34,9 @@ const Navbar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <Link className="btn btn-ghost normal-case text-xl">Laptop World</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to="/home">Home</Link></li>
                     </ul>
@@ -46,15 +46,15 @@ const Navbar = () => {
                         user?.uid ?
                             <>
                                 {
-                                    isAdmin === 'admin' ? <button ><Link to='/allusers' className='mr-6 '>All users</Link></button> : <></>
+                                    isAdmin === 'admin' ? <button ><Link to='/allusers' className='lg:mr-6 lg:hidden'>All users</Link></button> : <></>
                                 }
 
-                                <button ><Link to="/myorders" className='mr-6'>My Orders</Link></button>
+                                <button ><Link to="/myorders" className='lg:mr-6 sm:hidden'>My Orders</Link></button>
                                 <span className='mr-6'>{user?.displayName}</span>
                                 {
-                                    isAdmin === 'admin' || isAdmin === 'seller' ? <button ><Link to='/sellerdashboard' className='mr-6 ms-6'>Dashboard</Link></button> : <></>
+                                    isAdmin === 'admin' || isAdmin === 'seller' ? <button ><Link to='/sellerdashboard' className='lg:mr-6 lg:ms-6 sm:hidden'>Dashboard</Link></button> : <></>
                                 }
-                                <button className='mr-5' onClick={handleLogout}>Log Out</button>
+                                <button className='lg:mr-5 ' onClick={handleLogout}>Log Out</button>
                             </>
                             :
                             <>
