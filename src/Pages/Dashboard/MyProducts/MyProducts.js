@@ -6,9 +6,32 @@ import Advertice from '../../Home/Advertice/Advertice';
 
 const MyProducts = () => {
     const products = useLoaderData();
+    const [product,  setProduct] = products
     const { user } = useContext(AuthContext)
-
-
+    useEffect(() =>{
+        
+    },[product])
+    const handleDelete = product => {
+        const agree = window.confirm(`Are you sure you want to delete :`)
+        if (agree) {
+            console.log("Deleting user with id:", product._id)
+            fetch(`http://localhost:5000/deleteProduct/${product._id}`, {
+                method: 'DELETE',
+                headers : {
+                    'content-type' : 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        const remaining = product.filter(dlt => dlt._id !== product._id)
+                        setProduct(remaining)
+                    }
+                    
+                })
+        }
+    }
     const handleAdvertice = product => {
         console.log(product)
         fetch(`http://localhost:5000/products/${product._id}?advertice=true`, {
@@ -71,7 +94,7 @@ const MyProducts = () => {
                                         <button onClick={() => handleAdvertice(obj)} className="btn btn-ghost btn-xs">Advertise </button>
                                     </th>
                                     <th >
-                                        <button className="btn btn-ghost btn-xs">Delete</button>
+                                        <button onClick={() => handleDelete(obj)} className="btn btn-ghost btn-xs">Delete</button>
                                         <Link to={`/update/${obj._id}`}> <button className="btn btn-ghost btn-xs">Update</button></Link>
                                     </th>
                                 </tr>

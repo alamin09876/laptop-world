@@ -4,8 +4,8 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const BookingModal = ({ productDetails }) => {
     const { user } = useContext(AuthContext)
-    // console.log(productDetails)
-
+     console.log(productDetails)
+   
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -13,16 +13,16 @@ const BookingModal = ({ productDetails }) => {
         const userName = form.userName.value;
         const email = form.email.value;
         const price = form.price.value;
-        const photoURL = productDetails.picture;
+        const picture = productDetails.picture;
         const mobile = form.mobile.value
         const location = form.location.value
 
-        console.log(productName, price, userName, email, location, mobile)
+        console.log(picture)
         const bookings = {
 
             productName: productName,
             price,
-            photoURL,
+            picture,
             email,
             mobile,
             location,
