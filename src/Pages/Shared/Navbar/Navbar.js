@@ -56,7 +56,7 @@ const Navbar = () => {
                                     isAdmin === 'admin' ? <button ><Link to='/allusers' className='lg:mr-2 hidden lg:flex'>All users</Link></button> : <></>
                                 }
                                 {
-                                    isAdmin === 'admin' ? <button><Link to='/sellers' className='mr-2'>All sellers</Link></button> : <></>
+                                    isAdmin === 'admin' ? <button><Link to='/sellers' className='mr-2 hidden lg:flex'>All sellers</Link></button> : <></>
                                 }
                                 <button ><Link to="/myorders" className='lg:mr-2 hidden lg:flex'>My Orders</Link></button>
                                 <span className='mr-6'>{user?.displayName}</span>
