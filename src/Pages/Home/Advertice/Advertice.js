@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
 
 const Advertice = () => {
     const [advertice, setAdvertice] = useState([]);
@@ -12,6 +13,9 @@ const Advertice = () => {
                 setAdvertice(data)})
     }, [])
     console.log(advertice);
+    if(advertice.length <= 0 ){
+        return <Spinner></Spinner>
+    }
     return (
         <div className='grid lg:grid-cols-3'>
             {
