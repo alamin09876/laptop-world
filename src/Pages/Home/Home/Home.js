@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import AboutUs from '../AboutUs/AboutUs';
 import Advertice from '../Advertice/Advertice';
 import Carousle from '../Carousle/Carousle';
 
@@ -22,6 +23,7 @@ const Home = () => {
             </div>
             <h2 className='text-center text-6xl my-10'>Advertice Section</h2>
             <Advertice></Advertice>
+            <AboutUs></AboutUs>
 
         </div>
     );
