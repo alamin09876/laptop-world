@@ -19,7 +19,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
     navigate(from, { replace: true })
-
+// Google login
     const googleSignIn = () => {
         loginInWithGoogle(googleProvider)
             .then(result => {
@@ -27,12 +27,7 @@ const Login = () => {
                 console.log(user);
                 toast.success('Login Successfully')
                 navigate(from, { replace: true })
-                console.log(from)
-                
-                    
-                
-                
-                    
+                console.log(from)       
                 
             })
             .catch(error => {
